@@ -16,6 +16,9 @@
         <module>order_service</module>
         <module>product_service</module>
         <module>api_zuul_server</module>
+        <module>stream_producer</module>
+        <module>stream_consumer</module>
+        <module>stream_consumer2</module>
     </modules>
 
     <properties>
