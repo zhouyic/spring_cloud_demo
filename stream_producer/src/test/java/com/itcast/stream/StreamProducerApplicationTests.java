@@ -14,7 +14,10 @@ public class StreamProducerApplicationTests {
     private MessageSender messageSender;
     @Test
     public void contextLoads() {
-        messageSender.send("hello 消息分组");
+        for (int i = 0; i < 5; i++) {
+            messageSender.send("1");
+
+        }
     }
 
 }

@@ -9,14 +9,16 @@ spring:
     password: guest
   cloud:
     stream:
-      instanceCount: 2
-      instanceIndex: 1
+      instanceCount: 2 #消费者总数
+      instanceIndex: 0 #当前消费者的索引
       bindings:
         input:  # 内置的获取消息的通道,从itcast-default中获取消息
           destination: itcast-default
         myinput:
           destination: itcast-custom-output
           group: group1 #设置消息的组名称(同名组中的多个消费者,只会有一个去消费)
+          consumer:
+            partitioned: true #开启分区支持
       binders:
         defaultRabbit:
           type: rabbit
